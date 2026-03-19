@@ -21,19 +21,19 @@
 		<script type="importmap">		
 			{
 				"imports": {
-					"three": "./js/three.module.js"
+					"three": "./three.module.js"
 				}
 			}
 		</script>
 		<script type="module">
 
 			import * as THREE from 'three';
-			import { APP } from './js/app.js';
+			import { APP } from './app.js';
 
 			window.THREE = THREE; // Used by APP Scripts.
 
 			var loader = new THREE.FileLoader();
-			loader.load( 'app.json', async function ( text ) {
+			loader.load( './app.json', async function ( text ) {
 
 				var player = new APP.Player();
 				await player.load( JSON.parse( text ) );
